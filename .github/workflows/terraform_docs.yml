@@ -23,3 +23,5 @@ jobs:
           ./terraform-docs markdown table --hide header . > .README_OUT
           sed -i -ne '/<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->/{p;r .README_OUT' -e ':a;n;/<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->/!ba};p' README.md
           git add README.md
+      - name: commit and push changes
+        uses: actions-x/commit@v2
