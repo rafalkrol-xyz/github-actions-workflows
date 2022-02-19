@@ -1,3 +1,14 @@
+## [1.1.1](https://github.com/rafalkrol-xyz/github-actions-workflows/compare/v1.1.0...v1.1.1) (2022-02-19)
+
+
+### Docs
+
+* add a basic README ([52adfab](https://github.com/rafalkrol-xyz/github-actions-workflows/commit/52adfab4641bf2cc0760bf27ede0a970feeb6937))
+
+### Fix
+
+* add a commit and push changes step ([2aac8a8](https://github.com/rafalkrol-xyz/github-actions-workflows/commit/2aac8a8d78ee24517981b2ba77b738246c82a02b))
+
 # [1.1.0](https://github.com/rafalkrol-xyz/github-actions-workflows/compare/v1.0.0...v1.1.0) (2022-02-19)
 
 
