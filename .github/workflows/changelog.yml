@@ -1,0 +1,63 @@
+name: Changelog
+
+on:
+  push:
+    branches:
+      - main
+  workflow_call:
+
+jobs:
+  changelog:
+    name: Changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Install Node dependencies & set up semantic-release
+        env:
+          SEMANTIC_RELEASE_CONFIG: |
+            const customValue = process.env['CUSTOM_VALUE'] ? '-' + process.env['CUSTOM_VALUE'] : '';
+            const skipRelease = process.env['SKIP_RELEASE'] ? 'skip release' : 'skip ci';
+            module.exports = {
+                branches: [process.env['RELEASE_BRANCH'] || 'main'],
+                publish: ['@semantic-release/github'],
+                plugins: [
+                    ['@semantic-release/commit-analyzer', {
+                      preset: process.env['CUSTOM_PRESET'] || 'eslint',
+                    }],
+                    ['@semantic-release/release-notes-generator', {
+                      preset: process.env['CUSTOM_PRESET'] || 'eslint',
+                    }],
+                    '@semantic-release/changelog',
+                    ['@semantic-release/npm', {
+                      npmPublish: false,
+                    }],
+                    ['@semantic-release/git',
+                      {
+                        assets: ['CHANGELOG.md', ...(process.env['GIT_ASSETS'] ? String(process.env['GIT_ASSETS']).split(',') : [])],
+                      },
+                    ],
+                    '@semantic-release/github',
+                ],
+            };
+        run: |
+          echo $SEMANTIC_RELEASE_CONFIG > release.config.js
+          npm init --yes
+          npm install --global semantic-release@19.0.2 \
+          @semantic-release/changelog@6.0.1 \
+          @semantic-release/commit-analyzer@9.0.2 \
+          @semantic-release/git@10.0.1 \
+          @semantic-release/npm@9.0.0 \
+          @semantic-release/github@8.0.2 \
+          @semantic-release/release-notes-generator@10.0.3 \
+          conventional-changelog-eslint@3.0.9
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
