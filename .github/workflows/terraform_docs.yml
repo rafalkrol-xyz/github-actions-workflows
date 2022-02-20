@@ -22,6 +22,7 @@ jobs:
           git config --global push.default simple
           ./terraform-docs markdown table --hide header . > .README_OUT
           sed -i -ne '/<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->/{p;r .README_OUT' -e ':a;n;/<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->/!ba};p' README.md
+          rm .README_OUT terraform-docs terraform-docs.tar.gz
           git add README.md
       - name: commit and push changes
         uses: actions-x/commit@v2
