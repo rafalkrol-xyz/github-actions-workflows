@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/rafalkrol-xyz/github-actions-workflows/compare/v1.1.1...v1.1.2) (2022-02-20)
+
+
+### Fix
+
+* remove build artifacts ([9852c8c](https://github.com/rafalkrol-xyz/github-actions-workflows/commit/9852c8cc3681f0bd652b0029985d10b88a007ee3))
+
 ## [1.1.1](https://github.com/rafalkrol-xyz/github-actions-workflows/compare/v1.1.0...v1.1.1) (2022-02-19)
 
 
