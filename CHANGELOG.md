@@ -1,3 +1,18 @@
+## [1.1.3](https://github.com/rafalkrol-xyz/github-actions-workflows/compare/v1.1.2...v1.1.3) (2022-03-25)
+
+
+### Chore
+
+* align capitalization ([9f82d3d](https://github.com/rafalkrol-xyz/github-actions-workflows/commit/9f82d3d73e4a3c20c6a54e2d0ac09bc584fbb1ee))
+
+### Docs
+
+* add example usage ([5be82e9](https://github.com/rafalkrol-xyz/github-actions-workflows/commit/5be82e9921eb547b8280adc8684804d3b1b6edd5))
+
+### Fix
+
+* remove unused stuff ([6116375](https://github.com/rafalkrol-xyz/github-actions-workflows/commit/61163750b3a049d01baa5e611da4c7a2a26f7038))
+
 ## [1.1.2](https://github.com/rafalkrol-xyz/github-actions-workflows/compare/v1.1.1...v1.1.2) (2022-02-20)
 
 
