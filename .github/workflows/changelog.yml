@@ -22,17 +22,16 @@ jobs:
       - name: Install Node dependencies & set up semantic-release
         env:
           SEMANTIC_RELEASE_CONFIG: |
-            const customValue = process.env['CUSTOM_VALUE'] ? '-' + process.env['CUSTOM_VALUE'] : '';
             const skipRelease = process.env['SKIP_RELEASE'] ? 'skip release' : 'skip ci';
             module.exports = {
                 branches: [process.env['RELEASE_BRANCH'] || 'main'],
                 publish: ['@semantic-release/github'],
                 plugins: [
                     ['@semantic-release/commit-analyzer', {
-                      preset: process.env['CUSTOM_PRESET'] || 'eslint',
+                      preset: 'eslint',
                     }],
                     ['@semantic-release/release-notes-generator', {
-                      preset: process.env['CUSTOM_PRESET'] || 'eslint',
+                      preset: 'eslint',
                     }],
                     '@semantic-release/changelog',
                     ['@semantic-release/npm', {
