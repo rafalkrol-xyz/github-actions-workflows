@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/rafalkrol-xyz/github-actions-workflows/compare/v1.1.3...v1.2.0) (2022-04-23)
+
+
+### New
+
+* use the newest version ([950688a](https://github.com/rafalkrol-xyz/github-actions-workflows/commit/950688a5ed19b9dcd0ff0e656f23d4640731c475))
+
 ## [1.1.3](https://github.com/rafalkrol-xyz/github-actions-workflows/compare/v1.1.2...v1.1.3) (2022-03-25)
 
 
