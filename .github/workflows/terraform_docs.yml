@@ -25,4 +25,4 @@ jobs:
           rm .README_OUT terraform-docs terraform-docs.tar.gz
           git add README.md
       - name: Commit and push changes
-        uses: actions-x/commit@v2
+        uses: actions-x/commit@v5
